@@ -38,4 +38,18 @@
         android:text="Exercise 4-6 \n RecyclerView and Adapters"
         />
 
+    <Button
+        android:id="@+id/exercise_seven_eight_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exercise 7-8 \n LiveData"
+        />
+
+    <Button
+        android:id="@+id/exercise_nine_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exercise 9 \n Room"
+        />
+
 </LinearLayout>

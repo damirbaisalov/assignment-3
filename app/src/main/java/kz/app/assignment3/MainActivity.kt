@@ -10,6 +10,7 @@ import kz.app.assignment3.exercise1.ExerciseOneActivity
 import kz.app.assignment3.exercise2.ExerciseTwoActivity
 import kz.app.assignment3.exercise3.ExerciseThreeActivity
 import kz.app.assignment3.exercise46.ExWithRecyclerActivity
+import kz.app.assignment3.exercise78.ExWithLiveDataActivity
 import kz.app.assignment3.models.ExerciseType
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var button2: Button
     private lateinit var button3: Button
     private lateinit var button46: Button
+    private lateinit var button78: Button
+    private lateinit var button9: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +35,15 @@ class MainActivity : AppCompatActivity() {
         button2 = findViewById(R.id.exercise_two_button)
         button3 = findViewById(R.id.exercise_three_button)
         button46 = findViewById(R.id.exercise_four_six_button)
+        button78 = findViewById(R.id.exercise_seven_eight_button)
+        button9 = findViewById(R.id.exercise_nine_button)
 
         button1.setOnClickListener { navigateToExercise(ExerciseType.ONE) }
         button2.setOnClickListener { navigateToExercise(ExerciseType.TWO) }
         button3.setOnClickListener { navigateToExercise(ExerciseType.THREE) }
         button46.setOnClickListener { navigateToExercise(ExerciseType.FOUR_SIX) }
+        button78.setOnClickListener { navigateToExercise(ExerciseType.SEVEN_EIGHT) }
+        button9.setOnClickListener { navigateToExercise(ExerciseType.NINE) }
     }
 
     private fun navigateToExercise(exerciseType: ExerciseType) {
@@ -45,6 +52,8 @@ class MainActivity : AppCompatActivity() {
             ExerciseType.TWO -> ExerciseTwoActivity::class.java
             ExerciseType.THREE -> ExerciseThreeActivity::class.java
             ExerciseType.FOUR_SIX -> ExWithRecyclerActivity::class.java
+            ExerciseType.SEVEN_EIGHT -> ExWithLiveDataActivity::class.java
+            ExerciseType.NINE -> ExWithLiveDataActivity::class.java
         }
         val intent = Intent(this, destinationActivity)
         startActivity(intent)
