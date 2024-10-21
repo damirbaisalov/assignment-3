@@ -11,6 +11,7 @@ import kz.app.assignment3.exercise2.ExerciseTwoActivity
 import kz.app.assignment3.exercise3.ExerciseThreeActivity
 import kz.app.assignment3.exercise46.ExWithRecyclerActivity
 import kz.app.assignment3.exercise78.ExWithLiveDataActivity
+import kz.app.assignment3.exercise9.ExWithRoomActivity
 import kz.app.assignment3.models.ExerciseType
 
 class MainActivity : AppCompatActivity() {
@@ -53,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             ExerciseType.THREE -> ExerciseThreeActivity::class.java
             ExerciseType.FOUR_SIX -> ExWithRecyclerActivity::class.java
             ExerciseType.SEVEN_EIGHT -> ExWithLiveDataActivity::class.java
-            ExerciseType.NINE -> ExWithLiveDataActivity::class.java
+            ExerciseType.NINE -> ExWithRoomActivity::class.java
         }
         val intent = Intent(this, destinationActivity)
         startActivity(intent)
