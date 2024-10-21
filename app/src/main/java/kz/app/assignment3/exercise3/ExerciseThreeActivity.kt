@@ -12,7 +12,6 @@ import kz.app.assignment3.R
 class ExerciseThreeActivity : AppCompatActivity() {
 
     private lateinit var fragmentManager: FragmentManager
-    private var buttonAddText = "Add Second Fragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,23 +30,27 @@ class ExerciseThreeActivity : AppCompatActivity() {
                 .commit()
         }
 
-        val buttonAdd = findViewById<Button>(R.id.button_add)
-        val buttonReplace = findViewById<Button>(R.id.button_replace)
+        val buttonOneAdd = findViewById<Button>(R.id.button_first_add)
+        val buttonTwoAdd = findViewById<Button>(R.id.button_second_add)
+        val buttonReplaceWithFirst = findViewById<Button>(R.id.button_first_replace)
+        val buttonReplaceWithSecond = findViewById<Button>(R.id.button_second_replace)
+
         val buttonRemove = findViewById<Button>(R.id.button_remove)
 
-        buttonAdd.setOnClickListener {
-            val fragment = fragmentManager.findFragmentById(R.id.fragment_container)
-            val fragmentToAdd = if (fragment is FragmentOne) {
-                FragmentTwo()
-            } else {
-                FragmentOne()
-            }
-            addFragment(fragmentToAdd)
+        buttonOneAdd.setOnClickListener {
+            addFragment(FragmentOne())
         }
 
-        buttonReplace.setOnClickListener {
-            replaceFragment(FragmentOne())
+        buttonTwoAdd.setOnClickListener {
+            addFragment(FragmentTwo())
+        }
 
+        buttonReplaceWithFirst.setOnClickListener {
+            replaceFragment(FragmentTwo())
+        }
+
+        buttonReplaceWithSecond.setOnClickListener {
+            replaceFragment(FragmentOne())
         }
 
         buttonRemove.setOnClickListener {
