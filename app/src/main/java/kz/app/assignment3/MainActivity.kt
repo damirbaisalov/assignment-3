@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import kz.app.assignment3.exercise1.ExerciseOneActivity
 import kz.app.assignment3.exercise2.ExerciseTwoActivity
 import kz.app.assignment3.exercise3.ExerciseThreeActivity
+import kz.app.assignment3.exercise46.ExWithRecyclerActivity
 import kz.app.assignment3.models.ExerciseType
 
 class MainActivity : AppCompatActivity() {
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             ExerciseType.ONE -> ExerciseOneActivity::class.java
             ExerciseType.TWO -> ExerciseTwoActivity::class.java
             ExerciseType.THREE -> ExerciseThreeActivity::class.java
-            ExerciseType.FOUR_SIX -> ExerciseOneActivity::class.java
+            ExerciseType.FOUR_SIX -> ExWithRecyclerActivity::class.java
         }
         val intent = Intent(this, destinationActivity)
         startActivity(intent)
