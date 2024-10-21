@@ -1,4 +1,4 @@
-package kz.app.assignment3.exerciseOne
+package kz.app.assignment3.exercise1
 
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +22,7 @@ class ExerciseOneFragment : Fragment() {
 
         val textView = view.findViewById<TextView>(R.id.hello_text_view)
         textView.text = "Hello from Fragment!"
+
         return view
     }
 

@@ -1,12 +1,23 @@
 package kz.app.assignment3
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import kz.app.assignment3.exerciseOne.ExerciseOneFragment
+import kz.app.assignment3.exercise1.ExerciseOneActivity
+import kz.app.assignment3.exercise2.ExerciseTwoActivity
+import kz.app.assignment3.exercise3.ExerciseThreeActivity
+import kz.app.assignment3.models.ExerciseType
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var button1: Button
+    private lateinit var button2: Button
+    private lateinit var button3: Button
+    private lateinit var button46: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -16,13 +27,25 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        navigateToExerciseOneFragment()
+        button1 = findViewById(R.id.exercise_one_button)
+        button2 = findViewById(R.id.exercise_two_button)
+        button3 = findViewById(R.id.exercise_three_button)
+        button46 = findViewById(R.id.exercise_four_six_button)
+
+        button1.setOnClickListener { navigateToExercise(ExerciseType.ONE) }
+        button2.setOnClickListener { navigateToExercise(ExerciseType.TWO) }
+        button3.setOnClickListener { navigateToExercise(ExerciseType.THREE) }
+        button46.setOnClickListener { navigateToExercise(ExerciseType.FOUR_SIX) }
     }
 
-    private fun navigateToExerciseOneFragment() {
-        val helloFragment = ExerciseOneFragment()
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragment_container, helloFragment)
-            .commit()
+    private fun navigateToExercise(exerciseType: ExerciseType) {
+        val destinationActivity = when (exerciseType) {
+            ExerciseType.ONE -> ExerciseOneActivity::class.java
+            ExerciseType.TWO -> ExerciseTwoActivity::class.java
+            ExerciseType.THREE -> ExerciseThreeActivity::class.java
+            ExerciseType.FOUR_SIX -> ExerciseOneActivity::class.java
+        }
+        val intent = Intent(this, destinationActivity)
+        startActivity(intent)
     }
 }
